@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>directiveDemo</title>
+    <script src="angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("myApp",[]);
+        app.directive("hello",function() {
+            return {
+                restrict:"EACM",
+               // template:"<h1> hello</h1>",
+                template:"<h1>Hello<div ng-transclude></div></h1>",
+                transclude:true
+                /*replace:true*/
+            }
+        })
+
+    </script>
+</head>
+<body ng-app="myApp">
+    <hello>
+        <div>你好</div>
+    </hello>
+    <!-- directive:hello -->
+</body>
+</html>
